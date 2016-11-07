@@ -1,0 +1,28 @@
+extends ../../../views/layout
+
+block content
+	.paddStyle
+		#scrollToTop.container-fluid
+			h1.text-center.logo.logo-font.fontHead CONTACT US
+			.row.contactFrame
+				.col-md-12
+					.col-md-6.well.wellStyle.well-bg
+						#googleMap(style='height:400px;width:100%;')
+
+					.col-md-6
+						form.form-horizontal(role='form', method='post', action='/contact')
+							.form-group
+								label.control-label.col-sm-2(for='name') Name :
+								.col-sm-10
+									input#name.form-control(type='name', name='name', placeholder='Enter name')
+							.form-group
+								label.control-label.col-sm-2(for='email') Email :
+								.col-sm-10
+									input#email.form-control(type='email', name='email', placeholder='Enter email')
+							.form-group
+								label.control-label.col-sm-2 Query :
+								.col-sm-10
+									textarea#query.form-control(name='query', placeholder='Comment', rows='5')
+							.form-group
+								.col-sm-offset-2.col-sm-10
+									button.btn.btn-default(type='submit') Submit  

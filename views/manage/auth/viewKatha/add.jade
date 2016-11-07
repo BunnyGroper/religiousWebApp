@@ -1,0 +1,21 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  ADD KATHA VIDEOs
+      .row.contactFrame
+        .col-md-12
+          form.form-horizontal(role='form', method='post', action='/admin/viewKatha/add')
+            .form-group
+              label.control-label.col-sm-2(for='name') Title : 
+              .col-sm-10
+                input#title.form-control(type='name', name='title', placeholder='Enter title')
+            .form-group
+              label.control-label.col-sm-2 Download Link : 
+              .col-sm-10
+                input#downloadLink.form-control(type='url', value='http://example.com', name='link')
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                button.btn.btn-primary(type='submit') Submit
+          input(type='hidden', name='_csrf', value='{_csrf}')

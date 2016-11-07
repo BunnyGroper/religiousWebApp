@@ -1,0 +1,19 @@
+extends ../../../views/layout
+
+block content
+	.paddStyle
+		#scrollToTop.container-fluid
+			h1.text-center.logo.logo-font.fontHead GURBANI QUOTES
+			if quotes
+				each quote,i in quotes
+					.quote
+						.row.rowFrame
+							.col-md-2
+							.col-md-8
+								.well.wellStyle.well-bg.text-center
+									h5 Date : #{quote.date}
+									h1 #{quote.phrase}
+							.col-md-2
+			else
+				p.noquotes There are no quotes to display			
+

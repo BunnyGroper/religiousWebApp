@@ -1,0 +1,159 @@
+body{
+	background-color: #f1f1f1 !important;
+}
+
+.bg-white{
+	color:#FFFFFF !important;
+}
+
+.navbar {
+		margin-bottom: 0;
+		background-color: #2d2d30;
+		border: 0;
+		font-size: 13px !important;
+		letter-spacing: 3px;
+		opacity:0.9;
+	}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+			color: #d5d5d5 !important;
+		}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+			color: #fff !important;
+		}
+
+/* The active link */
+.navbar-nav li.active a {
+			color: #fff !important;
+			background-color:#29292c !important;
+		}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+			border-color: transparent;
+		}
+
+.dropdown-menu {
+	background-color: #414144 !important;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color:#414144 !important;
+    border-color: #337ab7;
+
+}
+
+/*BlackSlash Font*/
+ @font-face {font-family:"Backslash";src:url("/fonts/Backslash.eot?") format("eot"),url("/fonts/Backslash.woff") format("woff"),url("/fonts/Backslash.ttf") format("truetype"),url("/fonts/Backslash.svg#Backslash") format("svg");font-weight:normal;font-style:normal;}
+
+.logo{
+	font-family: backslash;
+	font-weight: bold;
+}
+
+/*logo font size*/
+.logo-fontSize{
+   font-size: 1.42em;
+}
+
+
+.nav>li>a{
+      color:#8e8e90;
+      font-size:14px;
+    }
+
+
+.paddStyle{
+	    margin: 76px 0px 0px 0px;
+}
+
+.frameStyle{
+		padding:5px 5px 5px 5px;
+}
+
+/*
+*******************ADMIN PANEL********************
+*/
+
+/*LOGIN page*/
+
+
+@import "bourbon";
+
+/*/*body {
+	background: #eee !important;	
+}*/
+
+.adminPadd{
+	margin: 2px 0px 2px 0px !important;
+}
+.labelz{
+	font-size:50px;
+}
+
+
+
+body {
+  margin-top: 50px;
+  font: arial;
+}
+
+a {
+  color: #00B7FF;
+}
+
+ul.success li,ul.info li,ul.error li{
+	margin:20px 0 20px 0;
+	padding:15px;
+	border:1px solid transparent;
+	border-radius:5px;
+	list-style:none;
+}
+
+ul.success,ul.error li{
+	color:#3c763d;
+	background:#dff0d8;
+	border-color:#d6e9c6;
+}
+
+
+/*Fotter*/
+.backColor{
+	background-color: #0a0f31;
+}
+
+.linkPad{
+	padding:2px !important;
+}
+
+.linkPadUL{
+	 list-style: none;
+		margin-left: 0;
+}
+
+/*SLIDER*/
+
+.sliderImg{
+	width:70%;
+}
+
+.bgCOL {
+	color: #8e8e90 !important;
+	    margin-top: 30px;
+
+}
+
+ li a:hover {
+    /*color: #fff !important;*/
+    background-color: #4a2727 !important;
+}
+
+
+/*Upload Image Section*/
+
+.frameImg{
+	width: 50%;
+}

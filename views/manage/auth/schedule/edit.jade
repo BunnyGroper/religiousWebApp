@@ -1,0 +1,30 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  EDIT SCHEDULE
+      if schedules
+        .row.contactFrame
+          .col-md-12
+            form.form-horizontal(role='form', method='post',action='/admin/schedule/edit/#{schedules._id}')
+              .form-group
+                label.control-label.col-sm-2(for='name') Place : 
+                .col-sm-10
+                  input#title.form-control(type='name', name='place',value="#{schedules.place}")
+              .form-group
+                label.control-label.col-sm-2 Date : 
+                .col-sm-10
+                  input#place.form-control(type='date', name='date',value="#{schedules.date}")
+              .form-group
+                label.control-label.col-sm-2 Direction : 
+                .col-sm-10
+                  input#duration.form-control(type='name', name='direction',value="#{schedules.direction}") 
+              .form-group
+                label.control-label.col-sm-2  Direction(from Google MAP) : 
+                .col-sm-10
+                  input#downloadLink.form-control(type='url',value="#{schedules.link}", name='link')
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  button.btn.btn-primary(type='submit') Submit
+            input(type='hidden', name='_csrf', value='{_csrf}')

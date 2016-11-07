@@ -1,0 +1,20 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  UPDATE QUOTE SECTION
+      if quotes
+          .row.contactFrame
+            .col-md-12
+              form.form-horizontal(role='form', method='post', action='/admin/quote/edit/#{quotes._id}')
+                .form-group
+                  label.control-label.col-sm-2(for='name') Phrase : 
+                  .col-sm-10
+                    input#title.form-control(type='name', name='phrase', value="#{quotes.phrase}")
+                .form-group
+                  .col-sm-offset-2.col-sm-10
+                    button.btn.btn-primary(type='submit') Update
+              input(type='hidden', name='_csrf', value='{_csrf}')
+      else
+        p.noquotes Error causing Update feature to hinder ..

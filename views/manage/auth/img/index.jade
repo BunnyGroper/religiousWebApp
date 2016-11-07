@@ -1,0 +1,27 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead IMAGE SECTION
+      h4 #[a(href='/admin/img/add') Add Image for Home]
+      .row
+        .col-md-12
+        .container
+          if images
+            table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+              thead
+                tr
+                  //- th Image Name
+                  th Image  
+                  th Date
+                  th
+              tbody
+                each image,i in images
+                  tr
+                    //- td #{image.name}
+                    td #[img.img-responsive.center-block.frameImg(src='/img/gallery_img/#{image.name}')]
+                    td #{image.date}
+                    td #[a.btn.btn-danger.center-block.removeviewImage(data-id='#{image._id}') Delete]
+          else
+            p.noimages No content to display.

@@ -1,0 +1,29 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead DOWNLOAD SECTION
+      h4 #[a(href='/admin/download/add') Add Download]
+      .row
+        .col-md-12
+        .container
+          if downloads
+            table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+              thead
+                tr
+                  th Title
+                  th Duration  
+                  th Download Link
+                  th
+                  th
+              tbody
+                each download,i in downloads
+                  tr
+                    td #{download.title}
+                    td #{download.date}  
+                    td #{download.download_link}  
+                    td #[a.btn.btn-primary.center-block(href='/admin/download/edit/#{download._id}') Edit]
+                    td #[a.btn.btn-danger.center-block.removeDownload(data-id='#{download._id}') Delete]
+          else
+            p.nodownloads No content to display.

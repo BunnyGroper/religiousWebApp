@@ -1,0 +1,25 @@
+extends ../../../views/layout
+
+block content
+	.paddStyle
+		#scrollToTop.container-fluid
+			h1.text-center.logo.fontHead.logo-font SCHEDULE
+			.row
+				if schedules
+					.schedules
+						.col-md-12
+							.container
+								table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+									thead
+										tr
+											th Date
+											th Place
+											th Direction
+											th GoogleMap's Direction
+									tbody
+										each schedule,i in schedules
+											tr
+												td #{schedule.date}                                      
+												td #{schedule.place}                                     
+												td #{schedule.direction}
+												td #[a(href="#{schedule.link}" target="_blank") Directions]

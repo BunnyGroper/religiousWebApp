@@ -1,0 +1,32 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead KATHA SECTION
+      h4 #[a(href='/admin/katha/add') Add Katha]
+      .row
+        .col-md-12
+        .container
+          if katha
+            table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+              thead
+                tr
+                  th Title
+                  th Date  
+                  th Place
+                  th
+                  th
+              tbody
+                each Katha,i in katha
+                  tr
+                    td   #{Katha.shabad_p} <br/>
+                      |  #{Katha.shabad_h} <br/>
+                      |  #{Katha.shabad_pe} <br/>
+                      |  #{Katha.meaning_e}
+                    td #{Katha.date}
+                    td #{Katha.place}  
+                    td #[a.btn.btn-primary.center-block(href='/admin/katha/edit/#{Katha._id}') Edit]
+                    td #[a.btn.btn-danger.center-block.removeKatha(data-id='#{Katha._id}') Delete]
+          else
+            p.nokatha No content to display.

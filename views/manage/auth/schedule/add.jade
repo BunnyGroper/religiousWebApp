@@ -1,0 +1,29 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  ADD SCHEDULE
+      .row.contactFrame
+        .col-md-12
+          form.form-horizontal(role='form', method='post', action='/admin/schedule/add')
+            .form-group
+              label.control-label.col-sm-2(for='name') Place : 
+              .col-sm-10
+                input#title.form-control(type='name', name='place', placeholder='Enter Place')
+            .form-group
+              label.control-label.col-sm-2 Date : 
+              .col-sm-10
+                input#place.form-control(type='date', name='date', placeholder='Enter date')
+            .form-group
+              label.control-label.col-sm-2 Direction : 
+              .col-sm-10
+                input#duration.form-control(type='name', name='direction', placeholder='direction') 
+            .form-group
+              label.control-label.col-sm-2  Direction(from Google MAP) : 
+              .col-sm-10
+                input#downloadLink.form-control(type='url', value='http://example.com', name='link')
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                button.btn.btn-primary(type='submit') Submit
+          input(type='hidden', name='_csrf', value='{_csrf}')

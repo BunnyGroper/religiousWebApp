@@ -1,0 +1,24 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  UPDATE KATHA VIDEOs
+      if kathas
+        .row.contactFrame
+          .col-md-12
+            form.form-horizontal(role='form', method='post',action='/admin/viewKatha/edit/#{kathas._id}')
+              .form-group
+                label.control-label.col-sm-2(for='name') Title : 
+                .col-sm-10
+                  input#title.form-control(type='name', name='title', value='#{kathas.title}')
+              .form-group
+                label.control-label.col-sm-2 Youtube Link : 
+                .col-sm-10
+                  input#downloadLink.form-control(type='url', value='#{kathas.link}', name='link')
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  button.btn.btn-primary(type='submit') Update
+            input(type='hidden', name='_csrf', value='{_csrf}')
+      else 
+        p.nokathas No content to display.

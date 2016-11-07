@@ -1,0 +1,29 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead SIMRAN SECTION
+      h4 #[a(href='/admin/simran/add') Add Simran]
+      .row
+        .col-md-12
+        .container
+          if simrans
+            table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+              thead
+                tr
+                  th Title
+                  th Date  
+                  th Duration
+                  th
+                  th
+              tbody
+                each simran,i in simrans
+                  tr
+                    td #{simran.title}
+                    td #{simran.date}  
+                    td #{simran.duration}  
+                    td #[a.btn.btn-primary.center-block(href='/admin/simran/edit/#{simran._id}') Edit]
+                    td #[a.btn.btn-danger.center-block.removeSimran(data-id='#{simran._id}') Delete]
+          else
+            p.nosimrans No content to display.

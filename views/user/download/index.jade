@@ -1,0 +1,26 @@
+extends ../../../views/layout
+
+block content
+	.paddStyle
+		container-fluid
+			h1.text-center.logo.logo-font.fontHead DOWNLOAD
+			if downloads
+				.row
+					.col-md-12
+						div
+							.container
+								table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+									thead
+										tr
+											th Simran Link 
+											th Minutes  
+											th Date
+									tbody
+										for download,i in downloads	
+											.download
+												tr
+													td #[a(href="#{download.download_link}") #{download.title}]  
+													td #{download.duration}  
+													td #{download.date}
+			else
+				p.nodownloads No content to display.

@@ -1,0 +1,94 @@
+extends layout
+
+block content
+  // Home Begins
+  #scrollToTop
+      .row
+        .fullscreen-bg
+          img.img-responsive(src='/img/bg_img/hs.png', style='width:100%;')
+  // Home Ends
+  // Gallery Begins
+  #gallery.paddStyle
+    .container-fluid
+      .container
+        h1.text-center.logo.logo-font GALLERY
+        .row
+          if images
+            .col-md-8
+              .well.wellStyle.well-bg
+                #myCarousel.carousel.slide(data-ride='carousel')
+                  // Indicators
+                  //- ol.carousel-indicators
+                  //-   li.active(data-target='#myCarousel', data-slide-to='0')
+                  //-   li(data-target='#myCarousel', data-slide-to='1')
+                  //-   li(data-target='#myCarousel', data-slide-to='2')
+                  //-   li(data-target='#myCarousel', data-slide-to='3')
+                  //-   li(data-target='#myCarousel', data-slide-to='4')
+                  //-   li(data-target='#myCarousel', data-slide-to='5')
+                  //-   li(data-target='#myCarousel', data-slide-to='6')
+                  //-   li(data-target='#myCarousel', data-slide-to='7')
+                  //-   li(data-target='#myCarousel', data-slide-to='8')
+                  //-   li(data-target='#myCarousel', data-slide-to='9')
+                  //-   li(data-target='#myCarousel', data-slide-to='10')
+                  //-   li(data-target='#myCarousel', data-slide-to='11')
+                  //-   li(data-target='#myCarousel', data-slide-to='12')
+                  // Wrapper for slides
+                  .carousel-inner.text-center(role='listbox')
+                    .item.active
+                      img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/1.jpg')
+                    each image,i in images
+                      .item
+                        img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/#{image.name}')
+                    //- .item.active
+                    //-   img.img-responsive.img-circle.center-block.sliderImg(src='./img/gallery_img/1.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/2.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/3.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/4.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/5.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/6.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/7.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/8.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/9.jpg')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/10.JPG')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/11.JPG')
+                    //- .item
+                    //-   img.img-responsive.img-thumbnail.center-block(src='./img/gallery_img/12.JPG')
+                  // Left and right controls
+                  a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+                    span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                    span.sr-only Previous
+                  a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+                    span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                    span.sr-only Next
+          else
+            p.noimages Sorry !! Something went wrong.Call Website Admistrator.
+          .col-md-4.wellStyle
+            .container-fluid
+              br
+              br
+              .row
+                .col-md-12
+                  h2
+                    strong
+                      em ੴ  ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ  ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ ॥
+              .row
+                .col-md-12.text-center
+                  h2
+                    strong
+                      em ॥ ਜਪੁ ॥
+              .row
+                .col-md-12
+                  h2
+                    strong
+                      em ਆਦਿ ਸਚੁ ਜੁਗਾਦਿ ਸਚੁ ॥ ਹੈ ਭੀ ਸਚੁ ਨਾਨਕ ਹੋਸੀ ਭੀ ਸਚੁ ॥1॥
+  // Gallery ENDS

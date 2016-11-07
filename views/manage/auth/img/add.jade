@@ -1,0 +1,17 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  ADD IMAGE
+      .row.contactFrame
+        .col-md-12
+          form.form-horizontal(role='form', method='post', action='/admin/img/add' ,enctype="multipart/form-data")
+            .form-group
+              label.control-label.col-sm-2(for='name') Image : 
+              .col-sm-10
+                <input  name="mainImg" multiple type="file">
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                button.btn.btn-primary(type='submit') Submit
+          input(type='hidden', name='_csrf', value='{_csrf}')

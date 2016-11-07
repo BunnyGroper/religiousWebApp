@@ -1,0 +1,168 @@
+doctype html(lang='en')
+html
+    head
+      meta(charset='utf-8')
+      |         
+      title WEBAPP         
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')     
+      link(rel='stylesheet', href='/stylesheets/bootstrap.css')     
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')           
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')       
+      script(src='/javascripts/bootstrap.js')
+      script(src='/javascripts/script.js')
+    
+      body(data-spy='scroll', data-target='.navbar', data-offset='50')#scrollToTop
+        
+          // Navigation Bar Begins
+          nav.navbar.navbar-default.navbar-invert.navbar-fixed-top(data-spy='affix')
+            .container-fluid
+              .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#portfolioNavbar')
+                  span.icon-bar
+                  |                                 
+                  span.icon-bar
+                  |                                 
+                  span.icon-bar
+                //- <a class="navbar-brand logo logo-fontSize" href="/">BugsBunny</a>
+                                       
+              #portfolioNavbar.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-left
+                  li(class=(title == 'Home' ? 'active' : ''))
+                    a(href='/') Home
+                  |                                 
+                  li(class=(title == 'Amolak-Bachan' ? 'active' : ''))
+                    a(href='/bachan') Amolak-Bachan
+                  |                              
+                  li(class=(title == 'Simran' ? 'active' : ''))
+                    a(href='simran') Simran
+                  |                                 
+                  li(class=(title == 'Download' ? 'active' : ''))
+                    a(href='/download') Download
+                  |                                 
+                  li(class=(title == 'Gurbani-Quotes' ? 'active' : ''))
+                    a(href='/quote') Gurbani-Quotes
+                  |                                 
+                  li.dropdown
+                    a.dropdown-toggle(data-toggle='dropdown') Katha
+                      |                                     
+                      span.caret
+                    |                                   
+                    ul.dropdown-menu
+                      li
+                        a(href='/kathas') Katha a day
+                      |                                     
+                      li
+                        a(href='/viewKatha') Watch Katha
+                  |                                 
+                  li.active(role='')
+                    a(href='/hukumnama')
+                      b Hukumnama
+                  |                                 
+                  li(class=(title == 'Schedule' ? 'active' : ''))
+                    a(href='/schedule')
+                      b Schedule                                 
+                  li(class=(title == 'contactUs' ? 'active' : ''))
+                    a(href='/contact')
+                      b Contact Us   
+                  |                                 
+                  li(class=(title == 'manage' ? 'active' : ''))
+                    a(href='/admin/login')
+                      span.glyphicon.glyphicon-search
+          // Navigation Bar Ends
+        .container-fluid
+          !=messages()      
+          block content
+
+      #footer.backColor.bgCOL
+          footer.text-center
+            .container-fluid
+              div.bgCOL
+                .row
+                  .col-sm-5.col-md-5
+                    h3 WAHEGURU
+                    |                                
+                    p
+                      | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven.
+                      | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven                          
+                  .col-sm-offset-1.col-md-offset-1.col-sm-2.col-md-2.text-center
+                    h3 Address
+                    |                                
+                    nav
+                      ul.nav.nav-pills.nav-stacked.linkPad.text-left
+                        li
+                          a.i.fa.fa-map-marker.pr-10 
+                            |  &nbsp One infinity loop,54100                                          
+                        li
+                          a.i.fa.fa-phone.pr-10
+                            |  &nbsp +00 1234567890                                   
+                        li
+                          a.i.fa.fa-fax.pr-10
+                            | &nbsp +00 1234567891                                 
+                        li
+                          a.i.fa.fa-envelope-o.pr-10
+                            | &nbsp info@idea.com                 
+                  //- .col-sm-offset-1.col-md-offset-1.col-sm-2.col-md-2.text-left
+                  //-   h3 LINK
+                  //-   |                                
+                  //-   nav
+                  //-     ul.nav.nav-pills.nav-stacked.linkPad
+                  //-       li
+                  //-         a.linkPad(href='/')
+                  //-           | Home
+                  //-           i.fa.fa-tags.pr-10                                
+                  //-       li
+                  //-         a.linkPad(href='/amolakBachan')
+                  //-           | Amolak Bachan
+                  //-           i.fa.fa-tags.pr-10
+                  //-       |                                    
+                  //-       li
+                  //-         a.linkPad(href='/simran')
+                  //-           | Simran
+                  //-           i.fa.fa-tags.pr-10
+                  //-       |                                    
+                  //-       li
+                  //-         a.linkPad(href='/download')
+                  //-           | Download
+                  //-           i.fa.fa-tags.pr-10
+                  //-       |                                    
+                  //-       li
+                  //-         a.linkPad(href='/kathas')
+                  //-           | Katha a day
+                  //-           i.fa.fa-tags.pr-10
+                  //-       |                                    
+                  //-       li
+                  //-         a.linkPad(href='/watchKatha')
+                  //-           | Watch Katha
+                  //-           i.fa.fa-tags.pr-10
+                  //-       |                                    
+                  //-       li
+                  //-         a.linkPad(href='/hukumnama')
+                  //-           | Hukumnama
+                  //-           i.fa.fa-tags.pr-10
+                  //-       |                                    
+                  //-       li
+                  //-         a.linkPad(href='/schedule')
+                  //-           | Schedule
+                  //-           i.fa.fa-tags.pr-10
+                  //-       |                                    
+                  //-       li
+                  //-         a.linkPad(href='/contactUs')
+                  //-           | Contact us
+                  //-           i.fa.fa-tags.pr-10
+                  .col-sm-offset-1.col-md-offset-1.col-sm-2.col-md-2
+                    h3 WAHEGURU
+                    |                                
+                    p
+                      | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven.
+                      | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven
+
+                .row
+                  .col-sm-1
+                  .col-sm-10
+                    <hr>
+                  .col-sm-1
+              a.up-arrow(href='#scrollToTop', data-toggle='tooltip', title='TO TOP')
+                span.glyphicon.glyphicon-chevron-up                    
+              p All rights reserved #[a.fa.fa-copyright(href='', data-toggle='tooltip', title='') BugsBunny]
+

@@ -1,0 +1,16 @@
+extends ../../../views/layout
+
+block content
+	.paddStyle
+		#scrollToTop.padKhathaContainer
+			.container-fluid
+				h1.text-center.logo.katha-font.fontHead Watch Katha
+					if kathas
+						.kathas
+							.row.padKhataFrame
+							each katha,i in kathas
+								.col-sm-4.col-md-4.col-lg-4.frameStyle
+									.embed-responsive.embed-responsive-16by9
+										iframe(width='560', height='315', src='#{katha.link}', frameborder='0', allowfullscreen='')
+					else
+						p.nokathas No content to display.

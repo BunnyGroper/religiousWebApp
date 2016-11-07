@@ -1,0 +1,20 @@
+extends ../../../manage
+
+block content
+		.container
+			.row <br><br><br><br>
+			.row.h1.logo REGISTER
+			p Please login below
+			.row <br><br>
+			.row
+				form( method='post', action='/admin/REGISTER',enctype='multipart/form-data')
+					.form-group
+						label Name :
+						input.form-control(type='text', name='username',placeholder='Username')
+					.form-group
+						label Password:
+						input.form-control(type='password', name='password', placeholder='Password')
+					.form-group
+						label Confirm Password:
+						input.form-control(type='password', name='cpassword', placeholder='Confirm Password')
+					input.btn.btn-primary(name='submit',type='submit',value='Register') 

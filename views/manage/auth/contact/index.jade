@@ -1,0 +1,20 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+      #scrollToTop.container-fluid
+        h1.text-center.logo.logo-font.fontHead QUERY FROM CLIENTS
+        if contacts
+          .row.rowFrame
+            .col-md-2
+            .col-md-8
+              each contact,i in contacts
+                .well.wellStyle.well-bg.text-center
+                  .container-fluid
+                    .row
+                      .col-md-3 Name : #{contact.name}
+                      .col-md-4 Email : #{contact.email}
+                      .col-md-5 Time : #{contact.date}
+                    .row(style='text-align: justify;')
+                      .col-md-12 #{contact.query}
+            .col-md-2

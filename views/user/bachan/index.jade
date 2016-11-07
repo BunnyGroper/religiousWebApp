@@ -1,0 +1,23 @@
+extends ../../../views/layout
+
+block content
+	.paddStyle
+		#scrollToTop.container-fluid
+			h1.text-center.logo.logo-font.fontHead AMOLAK BACHAN
+			if bachans
+					.bachan
+						.row
+							.col-md-12
+								.container
+									table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+										thead
+											tr
+												th Title(Click on to listen)
+												th Date & place
+												th Duration(approx.)
+										tbody
+											each bachan,i in bachans
+												tr
+													td #[a(href="#{bachan.download_link}") #{bachan.title}]
+													td #{bachan.date},#{bachan.place}
+													td #{bachan.duration}

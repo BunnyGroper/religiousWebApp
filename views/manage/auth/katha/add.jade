@@ -1,0 +1,41 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  ADD KATHA
+      .row.contactFrame
+        .col-md-12
+          form.form-horizontal(role='form', method='post', action='/admin/katha/add')
+            .form-group
+              label.control-label.col-sm-2(for='shabad_p') Shabad(punjabi) : 
+              .col-sm-10
+                input#title.form-control(type='name', name='shabad_p', placeholder="Add Shabad in Punjabi")
+            .form-group
+              label.control-label.col-sm-2(for='shabad_h') Shabad(hindi) : 
+              .col-sm-10
+                input#title.form-control(type='name', name='shabad_h', placeholder="Add Shabad in Hindi")
+            .form-group
+              label.control-label.col-sm-2(for='shabad_pe') Shabad(english) : 
+              .col-sm-10
+                input#title.form-control(type='name', name='shabad_pe', placeholder="Add Shabad in English")
+            .form-group
+              label.control-label.col-sm-2(for='meaning_e') Shabad(meaning) : 
+              .col-sm-10
+                input#title.form-control(type='name', name='meaning_e', placeholder="Add Meaning of Shabad")  
+            .form-group
+              label.control-label.col-sm-2 Ang : 
+              .col-sm-10
+                input#place.form-control(type='name', name='ang', placeholder="Add Ang of Guru Granth Sahib")
+            .form-group
+              label.control-label.col-sm-2 Place : 
+              .col-sm-10
+                input#place.form-control(type='name', name='place', placeholder="Add Place")
+            .form-group
+              label.control-label.col-sm-2 Download Link : 
+              .col-sm-10
+                input#downloadLink.form-control(type='url', placeholder="Add Download Link of Katha", name='downloadLink')
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                button.btn.btn-primary(type='submit') Add
+          input(type='hidden', name='_csrf', value='{_csrf}')

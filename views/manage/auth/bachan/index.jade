@@ -1,0 +1,29 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead AMOLAK-BACHAN
+      h4 #[a(href='/admin/bachan/add') Add Amolak-Bachan]
+      .row
+        .col-md-12
+        .container
+          if bachans
+            table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+              thead
+                tr
+                  th Title
+                  th Date  
+                  th Place
+                  th
+                  th
+              tbody
+                each bachan,i in bachans
+                  tr
+                    td #{bachan.title}
+                    td #{bachan.date}
+                    td #{bachan.place}  
+                    td #[a.btn.btn-primary.center-block(href='/admin/bachan/edit/#{bachan._id}') Edit]
+                    td #[a.btn.btn-danger.center-block.removeBachan(data-id='#{bachan._id}') Delete]
+          else
+            p.nobachans No content to display.

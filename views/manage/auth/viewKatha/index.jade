@@ -1,0 +1,29 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead KATHA VIDEO SECTION
+      h4 #[a(href='/admin/viewKatha/add') Add Katha Video]
+      .row
+        .col-md-12
+        .container
+          if kathas
+            table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+              thead
+                tr
+                  th Title
+                  th Link  
+                  th Date
+                  th
+                  th
+              tbody
+                each katha,i in kathas
+                  tr
+                    td #{katha.title}
+                    td #{katha.link} 
+                    td #{katha.date}
+                    td #[a.btn.btn-primary.center-block(href='/admin/viewKatha/edit/#{katha._id}') Edit]
+                    td #[a.btn.btn-danger.center-block.removeviewKatha(data-id='#{katha._id}') Delete]
+          else
+            p.nobachans No content to display.

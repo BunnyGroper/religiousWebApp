@@ -1,0 +1,28 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  UPDATE AMOLAK-BACHAN
+      if Simrans
+          .row.contactFrame
+            .col-md-12
+              form.form-horizontal(role='form', method='post', action='/admin/simran/edit/#{Simrans._id}')
+                .form-group
+                  label.control-label.col-sm-2(for='name') Title : 
+                  .col-sm-10
+                    input#title.form-control(type='name', name='title', value="#{Simrans.title}")
+                .form-group
+                  label.control-label.col-sm-2 Duration : 
+                  .col-sm-10
+                    input#duration.form-control(type='name', name='duration', value="#{Simrans.duration}") 
+                .form-group
+                  label.control-label.col-sm-2 Download Link : 
+                  .col-sm-10
+                    input#downloadLink.form-control(type='url', value="#{Simrans.download_link}", name='downloadLink')
+                .form-group
+                  .col-sm-offset-2.col-sm-10
+                    button.btn.btn-primary(type='submit') Update
+              input(type='hidden', name='_csrf', value='{_csrf}')
+      else
+        p.nobachans Error causing Update feature to hinder ..

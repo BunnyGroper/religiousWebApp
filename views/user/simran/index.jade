@@ -1,0 +1,26 @@
+extends ../../../views/layout
+
+block content
+	.paddStyle
+		#scrollToTop.container-fluid
+			h1.text-center.logo.logo-font.fontHead SIMRAN
+			if simrans
+				.row
+					.col-md-12
+						div
+							.container
+								table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
+									thead
+										tr
+											th Simran Link 
+											th Minutes  
+											th Date
+									tbody
+										for simran,i in simrans
+											.simran
+												tr
+													td #[a(href="#{simran.download_link}") #{simran.title}]  
+													td #{simran.duration}  
+													td #{simran.date}
+			else
+				p.nosimrans No content to display.

@@ -1,0 +1,44 @@
+extends ../../../manage
+
+block content
+  .paddStyle
+    #scrollToTop.container
+      h1.logo.logo-font.fontHead  EDIT KATHA
+      if katha
+          .row.contactFrame
+            .col-md-12
+              form.form-horizontal(role='form', method='post', action='/admin/katha/edit/#{katha._id}')
+                .form-group
+                  label.control-label.col-sm-2(for='shabad_p') Shabad(punjabi) : 
+                  .col-sm-10
+                    input#title.form-control(type='name', name='shabad_p', value="#{katha.shabad_p}")
+                .form-group
+                  label.control-label.col-sm-2(for='shabad_h') Shabad(hindi) : 
+                  .col-sm-10
+                    input#title.form-control(type='name', name='shabad_h', value="#{katha.shabad_h}")
+                .form-group
+                  label.control-label.col-sm-2(for='shabad_pe') Shabad(english) : 
+                  .col-sm-10
+                    input#title.form-control(type='name', name='shabad_pe', value="#{katha.shabad_pe}")
+                .form-group
+                  label.control-label.col-sm-2(for='meaning_e') Shabad(meaning) : 
+                  .col-sm-10
+                    input#title.form-control(type='name', name='meaning_e', value="#{katha.meaning_e}")  
+                .form-group
+                  label.control-label.col-sm-2 Ang : 
+                  .col-sm-10
+                    input#place.form-control(type='name', name='ang', value="#{katha.ang}")
+                .form-group
+                  label.control-label.col-sm-2 Place : 
+                  .col-sm-10
+                    input#place.form-control(type='name', name='place', value="#{katha.place}")
+                .form-group
+                  label.control-label.col-sm-2 Download Link : 
+                  .col-sm-10
+                    input#downloadLink.form-control(type='url', value="#{katha.download_link}", name='downloadLink')
+                .form-group
+                  .col-sm-offset-2.col-sm-10
+                    button.btn.btn-primary(type='submit') Update
+              input(type='hidden', name='_csrf', value='{_csrf}')
+      else
+        p.nokatha Error causing Update feature to hinder ..
