@@ -12,7 +12,8 @@ var multer = require('multer');
 var flash = require('connect-flash');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://test:test@ds147167.mlab.com:47167/sikhreligion');
+// mongoose.connect('mongodb://test:test@ds147167.mlab.com:47167/sikhreligion');
+mongoose.connect('mongodb://localhost/sikhreligion');
 var db = mongoose.connection;
 
 

@@ -15,12 +15,16 @@ router.get('/',ensureAuthenticated, function(req, res, next) {
 			// console.log(bachans);
 			res.render('./manage/auth/bachan/index',{"bachans":bachans}); 
 		}
-		});
+	});
 });
+
+// Access add.jade
 
 router.get('/add',ensureAuthenticated,function(req, res, next) {
 	res.render('./manage/auth/bachan/add'); 
 });
+
+// Post add.jade
 
 router.post('/add',ensureAuthenticated,function(req,res,next){
 
@@ -39,13 +43,13 @@ router.post('/add',ensureAuthenticated,function(req,res,next){
 	// Form Validation
 	req.checkBody('title','Name field is required').notEmpty();
 	req.checkBody('place','Email field is required').notEmpty();
-	req.checkBody('duration','Email is not valid').notEmpty().isInt();
+	req.checkBody('duration','Duration must contain Integar value').notEmpty().isInt();
 	req.checkBody('downloadLink','Query field is required').notEmpty();	
 
 	// Check for errors
 	var errors = req.validationErrors();
 	if(errors){
-		res.render('/admin/bachan/add',{
+		res.render('./manage/auth/bachan/add',{
 			errors : errors,
 			title:title,
 			place:place,
@@ -94,27 +98,45 @@ router.post('/edit/:id',ensureAuthenticated,function(req,res,next){
 	var place =  req.body.place && req.body.place.trim();
 	var duration = req.body.duration && req.body.duration.trim();
 	var downloadLink = req.body.downloadLink && req.body.downloadLink.trim();
-	var dateArr = new Date();
-	var date = dateArr.toString();
-	var newBachan = new Bachan({
-		title:title,
-		place:place,
-		duration:duration,
-		download_link:downloadLink,
-		date:date
-	});
-	
-	Bachan.updateBachan({_id:req.params.id},newBachan,function(err,bachan){
-		if(err) throw err;
-		console.log("updated one : " + bachan);	
-	});
+	var date = new Date();
 
-	//Success Message
-	req.flash('success','Bachan Successfully Updated');
-	res.location('/admin/bachan/');
-	res.redirect('/admin/bachan/');
-	}
-);
+		// Form Validation
+	req.checkBody('title','Name field is required').notEmpty();
+	req.checkBody('place','Email field is required').notEmpty();
+	req.checkBody('duration','Duration must contain Integar value').notEmpty().isInt();
+	req.checkBody('downloadLink','Query field is required').notEmpty();	
+
+	// Check for errors
+	var errors = req.validationErrors();
+	if(errors){
+		res.render('./manage/auth/bachan/edit',{
+			errors : errors,
+			title:title,
+			place:place,
+			duration:duration,
+			download_link:downloadLink,
+			date:date
+		});
+	} else {
+				var newBachan = new Bachan({
+				title:title,
+				place:place,
+				duration:duration,
+				download_link:downloadLink,
+				date:date
+				});
+
+				Bachan.updateBachan({_id:req.params.id},newBachan,function(err,bachan){
+					if(err) throw err;
+					console.log("updated one : " + bachan);	
+				});
+
+				//Success Message
+				req.flash('success','Bachan Successfully Updated');
+				res.location('/admin/bachan/');
+				res.redirect('/admin/bachan/');
+			}
+});
 
 
 // Delete Bachan

@@ -42,7 +42,7 @@ router.post('/add',ensureAuthenticated,function(req,res,next){
 	// Check for errors
 	var errors = req.validationErrors();
 	if(errors){
-		res.render('/admin/simran/add',{
+		res.render('./manage/auth/simran/add',{
 			errors : errors,
 			title:title,
 			duration:duration,

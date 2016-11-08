@@ -45,7 +45,7 @@ router.post('/add',ensureAuthenticated,function(req,res,next){
 	// Check for errors
 	var errors = req.validationErrors();
 	if(errors){
-		res.render('/admin/katha/add',{
+		res.render('./manage/auth/katha/add',{
 			errors : errors,
 			shabad_p:shabad_p,
 			shabad_h:shabad_h,

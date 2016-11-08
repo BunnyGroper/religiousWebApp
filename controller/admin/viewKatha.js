@@ -35,7 +35,7 @@ router.post('/add',ensureAuthenticated,function(req,res,next){
 	// Check for errors
 	var errors = req.validationErrors();
 	if(errors){
-		res.render('./manage/auth/viewKatha/index',{
+		res.render('./manage/auth/viewKatha/add',{
 			errors : errors,
 			title:title,
 			link:link,

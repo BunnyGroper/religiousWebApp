@@ -36,7 +36,7 @@ router.post('/',ensureAuthenticated,upload.array(),function(req,res,next){
 	// Check for errors
 	var errors = req.validationErrors();
 	if(errors){
-		res.render('register',{
+		res.render('./manage/auth/register/add',{
 			errors : errors,
 			username:username,
 			password:password,

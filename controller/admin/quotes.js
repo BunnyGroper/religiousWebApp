@@ -36,7 +36,7 @@ router.post('/add',ensureAuthenticated,function(req,res,next){
 	// Check for errors
 	var errors = req.validationErrors();
 	if(errors){
-		res.render('/admin/quote/add',{
+		res.render('./manage/auth/quotes/add',{
 			errors : errors,
 			phrase:phrase
 		});

@@ -42,7 +42,7 @@ router.post('/add',ensureAuthenticated,function(req,res,next){
 	// Check for errors
 	var errors = req.validationErrors();
 	if(errors){
-		res.render('/admin/download/add',{
+		res.render('./manage/auth/download/add',{
 			errors : errors,
 			title:title,
 			duration:duration,
@@ -102,7 +102,7 @@ router.post('/edit/:id',ensureAuthenticated,function(req,res,next){
 	});
 
 	//Success Message
-	req.flash('success','Download Section Content Successfully Updated');
+	req.flash('success','Content Successfully Updated');
 	res.location('/admin/download/');
 	res.redirect('/admin/download/');
 	}
