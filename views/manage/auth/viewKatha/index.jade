@@ -2,12 +2,11 @@ extends ../../../manage
 
 block content
   .paddStyle
-    #scrollToTop.container
+    #scrollToTop
       h1.logo.logo-font.fontHead KATHA VIDEO SECTION
       h4 #[a(href='/admin/viewKatha/add') Add Katha Video]
       .row
         .col-md-12
-        .container
           if kathas
             table.table.table-striped.table-bordered.table-hover.table-condensed.tableFrame
               thead
@@ -22,7 +21,7 @@ block content
                   tr
                     td #{katha.title}
                     td #{katha.link} 
-                    td #{katha.date}
+                    td {.date}
                     td #[a.btn.btn-primary.center-block(href='/admin/viewKatha/edit/#{katha._id}') Edit]
                     td #[a.btn.btn-danger.center-block.removeviewKatha(data-id='#{katha._id}') Delete]
           else

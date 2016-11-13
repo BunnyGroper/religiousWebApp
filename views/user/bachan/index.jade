@@ -2,7 +2,7 @@ extends ../../../views/layout
 
 block content
 	.paddStyle
-		#scrollToTop.container-fluid
+		#scrollToTop
 			h1.text-center.logo.logo-font.fontHead AMOLAK BACHAN
 			if bachans
 					.bachan
@@ -14,7 +14,7 @@ block content
 											tr
 												th Title(Click on to listen)
 												th Date & place
-												th Duration(approx.)
+												th Duration
 										tbody
 											each bachan,i in bachans
 												tr

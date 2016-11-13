@@ -67,102 +67,54 @@ html
                       b Contact Us   
                   |                                 
                   li(class=(title == 'manage' ? 'active' : ''))
-                    a(href='/admin/login')
-                      span.glyphicon.glyphicon-search
+                    a(href='/admin/login') 
+                      b Login
+                      //- span.glyphicon.glyphicon-search
           // Navigation Bar Ends
-        .container-fluid
-          !=messages()      
-          block content
+          .container-fluid
+            !=messages()      
+            block content
 
-      #footer.backColor.bgCOL
-          footer.text-center
-            .container-fluid
-              div.bgCOL
-                .row
-                  .col-sm-5.col-md-5
-                    h3 WAHEGURU
-                    |                                
-                    p
-                      | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven.
-                      | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven                          
-                  .col-sm-offset-1.col-md-offset-1.col-sm-2.col-md-2.text-center
-                    h3 Address
-                    |                                
-                    nav
-                      ul.nav.nav-pills.nav-stacked.linkPad.text-left
-                        li
-                          a.i.fa.fa-map-marker.pr-10 
-                            |  &nbsp One infinity loop,54100                                          
-                        li
-                          a.i.fa.fa-phone.pr-10
-                            |  &nbsp +00 1234567890                                   
-                        li
-                          a.i.fa.fa-fax.pr-10
-                            | &nbsp +00 1234567891                                 
-                        li
-                          a.i.fa.fa-envelope-o.pr-10
-                            | &nbsp info@idea.com                 
-                  //- .col-sm-offset-1.col-md-offset-1.col-sm-2.col-md-2.text-left
-                  //-   h3 LINK
-                  //-   |                                
-                  //-   nav
-                  //-     ul.nav.nav-pills.nav-stacked.linkPad
-                  //-       li
-                  //-         a.linkPad(href='/')
-                  //-           | Home
-                  //-           i.fa.fa-tags.pr-10                                
-                  //-       li
-                  //-         a.linkPad(href='/amolakBachan')
-                  //-           | Amolak Bachan
-                  //-           i.fa.fa-tags.pr-10
-                  //-       |                                    
-                  //-       li
-                  //-         a.linkPad(href='/simran')
-                  //-           | Simran
-                  //-           i.fa.fa-tags.pr-10
-                  //-       |                                    
-                  //-       li
-                  //-         a.linkPad(href='/download')
-                  //-           | Download
-                  //-           i.fa.fa-tags.pr-10
-                  //-       |                                    
-                  //-       li
-                  //-         a.linkPad(href='/kathas')
-                  //-           | Katha a day
-                  //-           i.fa.fa-tags.pr-10
-                  //-       |                                    
-                  //-       li
-                  //-         a.linkPad(href='/watchKatha')
-                  //-           | Watch Katha
-                  //-           i.fa.fa-tags.pr-10
-                  //-       |                                    
-                  //-       li
-                  //-         a.linkPad(href='/hukumnama')
-                  //-           | Hukumnama
-                  //-           i.fa.fa-tags.pr-10
-                  //-       |                                    
-                  //-       li
-                  //-         a.linkPad(href='/schedule')
-                  //-           | Schedule
-                  //-           i.fa.fa-tags.pr-10
-                  //-       |                                    
-                  //-       li
-                  //-         a.linkPad(href='/contactUs')
-                  //-           | Contact us
-                  //-           i.fa.fa-tags.pr-10
-                  .col-sm-offset-1.col-md-offset-1.col-sm-2.col-md-2
-                    h3 WAHEGURU
-                    |                                
-                    p
-                      | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven.
-                      | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven
-
-                .row
-                  .col-sm-1
-                  .col-sm-10
-                    <hr>
-                  .col-sm-1
-              a.up-arrow(href='#scrollToTop', data-toggle='tooltip', title='TO TOP')
-                span.glyphicon.glyphicon-chevron-up                    
-              p All rights reserved #[a.fa.fa-copyright(href='', data-toggle='tooltip', title='') BugsBunny]
+          #footer.backColor.bgCOL.container-fluid
+              footer.text-center
+                .container-fluid
+                  div.bgCOL
+                    .row
+                      .col-sm-5.col-md-5
+                        h3 WAHEGURU
+                        |                                
+                        p
+                          | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven.
+                          | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven                          
+                      .col-sm-offset-1.col-md-offset-1.col-sm-2.col-md-2.text-center
+                        h3 Address
+                        |                                
+                        nav
+                          ul.nav.nav-pills.nav-stacked.linkPad.text-left
+                            li
+                              a.i.fa.fa-map-marker.pr-10 
+                                |  &nbsp One infinity loop,54100                                          
+                            li
+                              a.i.fa.fa-phone.pr-10
+                                |  &nbsp +00 1234567890                                   
+                            li
+                              a.i.fa.fa-fax.pr-10
+                                | &nbsp +00 1234567891                                 
+                            li
+                              a.i.fa.fa-envelope-o.pr-10
+                                | &nbsp info@idea.com                 
+                      .col-sm-offset-1.col-md-offset-1.col-sm-2.col-md-2
+                        h3 WAHEGURU
+                        |                                
+                        p
+                          | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven.
+                          | Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven
+                    .row
+                      .col-sm-1
+                      .col-sm-10
+                        <hr>
+                      .col-sm-1
+                  a.up-arrow(href='#scrollToTop', data-toggle='tooltip', title='TO TOP')
+                    span.glyphicon.glyphicon-chevron-up                    
+                  p All rights reserved #[a.fa.fa-copyright(href='', data-toggle='tooltip', title='') BugsBunny]
 
